@@ -93,5 +93,3 @@ def container_encrypt(stringed_name):
 # Decryption
 
 
-# RPT = binascii.unhexlify( '%x'% PT1)
-# RPT IS DECRYPTION
