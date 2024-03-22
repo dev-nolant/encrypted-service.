@@ -1,7 +1,8 @@
 import encryptionF as ef
-import random
 import binascii
 import re
+import secrets
+
 characters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 def conversion(shift_am, callname):
@@ -23,7 +24,7 @@ def decrypt(data, shift):
 
 def pcallc(original):
     userinp = str(original.lower())
-    efn = conversion(random.randint(1, 97), userinp)
+    efn = conversion(secrets.SystemRandom().randint(1, 97), userinp)
     efnpt2 = ef.container_encrypt(str(efn[0]))
     urlify = re.sub('[^a-zA-Z0-9 \n\.]', '', str(efnpt2))
     return (urlify.replace(" ", ""), efn[2],  efnpt2)
