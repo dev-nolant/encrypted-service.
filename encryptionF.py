@@ -1,15 +1,15 @@
 import binascii
+import secrets
+
 def container_encrypt(stringed_name):
 
     def rand_key(p):
-        
-        import random
         key1 = ""
         p = int(p)
         
         for i in range(p):
             
-            temp = random.randint(0,1)
+            temp = secrets.SystemRandom().randint(0,1)
             temp = str(temp)
             key1 = key1 + temp
             
